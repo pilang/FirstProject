@@ -4,11 +4,6 @@ namespace Förberedande_Kurs
     class Person
     {
 
-
-        //internal int health;
-        //internal int strength;
-        //internal int lucky;
-
         private int health = new Random().Next(50, 100);
         private int strength = new Random().Next(50, 100);
         private int luck = new Random().Next(50, 100);
