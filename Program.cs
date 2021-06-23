@@ -152,7 +152,7 @@ namespace Förberedande_Kurs
                     case 10:
                         Console.Write("Storlek: ");
                         int storlek = int.Parse(Console.ReadLine());
-                        Console.Write("      ");
+                        Console.Write("       ");
                         for (int i = 1; i <= storlek ; i++)
                         {
                             Console.Write("{0,5}",i);
@@ -160,7 +160,7 @@ namespace Förberedande_Kurs
                         Console.WriteLine("");
 
 
-                        Console.Write("      ");
+                        Console.Write("       ");
                         for(int i=1; i <= storlek ; i++)
                         {
                             Console.Write("_____");
@@ -170,7 +170,7 @@ namespace Förberedande_Kurs
                         for (int i=1; i <= storlek; i++)
                         {
                             //int j = 1;
-                            Console.Write("{0,5}|",i);
+                            Console.Write("{0,5} |",i);
                             for (int j=1; j <= storlek; j++)
                             {
                                 Console.Write("{0,5}",i * j);
@@ -205,7 +205,6 @@ namespace Förberedande_Kurs
                         break;
 
                     case 12:
-                        Console.WriteLine((int)15 / (int)2);
                         Console.Write("Uttryck att testa: ");
                         string pal = Console.ReadLine();
                         string clean = Regex.Replace(pal.ToUpper(), @"[^A-Ö]", "");   // Till uppercase och tvätta bort allt annat än bokstäver
@@ -245,9 +244,6 @@ namespace Förberedande_Kurs
                         string numbers = Console.ReadLine();
 
                         string[] nums = numbers.Split(',');
-
-                        //Array.Sort(nums); //här var det visst fortfarande string, sortera senare istället.
-
                         List<int> Odd = new List<int>();
                         List<int> Even = new List<int>();
 
