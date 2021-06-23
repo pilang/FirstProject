@@ -18,7 +18,7 @@ namespace Förberedande_Kurs
             int tal1, tal2;
             var slump = new Random();
 
-            string filepath = @"/Users/joakim/testfil.txt";  // anpassad för Macs filsystem
+            string filepath = @"testfil.txt";   // Kanske blir mer plattformsoberoende om man skippar absolut sökväg
 
             if (!File.Exists(filepath))  // Gör filen och fyll med något om den inte finns
             {
