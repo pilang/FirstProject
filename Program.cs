@@ -50,26 +50,23 @@ namespace Förberedande_Kurs
                 Console.WriteLine("14: Lista sorterade tal efter udda/jämn");
                 Console.WriteLine("15: Summera tal");
                 Console.WriteLine("16: Gör två karaktärer");
-                input = Int32.Parse(Console.ReadLine());
+
+                //input = Int32.Parse(Console.ReadLine());
+                bool resp = Int32.TryParse(Console.ReadLine(), out input);
+                if (!resp)
+                {
+                    input = 17;
+                }
+                
 
                 switch (input)
                 {
                     case 1:
-                        Console.WriteLine("Hello World!");
+                        Ex1();
                         break;
 
                     case 2:
-                        String namn;
-                        String enamn;
-                        int age;
-                        Console.Write("Ange förnamn: ");
-                        namn = Console.ReadLine();
-                        Console.Write("Ange efternamn:");
-                        enamn = Console.ReadLine();
-                        Console.Write("Ange ålder:");
-                        age = Int32.Parse(Console.ReadLine());
-                        Console.WriteLine("Namn: " + namn + " " + enamn);
-                        Console.WriteLine("Ålder: " + age);
+                        Ex2();
                         break;
 
                     case 3:
@@ -294,15 +291,53 @@ namespace Förberedande_Kurs
                         var p2 = new Person(Console.ReadLine());  // Person p = ... kanske
                         Console.WriteLine(p1);
                         Console.WriteLine(p2);
-                        
 
+                    
                        break;
 
+
+
+                    case 17:
+                    
+
+      
+
+                        Console.WriteLine("Unvalid input");
+                        break;
+
+                   // case default:
+                     //   Console.WriteLine("Unvalid input");
+                       // break;
+
+                    //case default:
+                      //  break;
+
+
                 }
-                Console.WriteLine("\nPress 'Enter' to continue");
-                Console.ReadLine();
+                Console.WriteLine("\nPress any key to continue");
+                Console.ReadKey();
             }
             Console.WriteLine("Bye!");
+        }
+
+        private static void Ex2()
+        {
+            String namn;
+            String enamn;
+            int age;
+            Console.Write("Ange förnamn: ");
+            namn = Console.ReadLine();
+            Console.Write("Ange efternamn:");
+            enamn = Console.ReadLine();
+            Console.Write("Ange ålder:");
+            age = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Namn: " + namn + " " + enamn);
+            Console.WriteLine("Ålder: " + age);
+        }
+
+        private static void Ex1()
+        {
+            Console.WriteLine("Hello World!");
         }
     }
 }
