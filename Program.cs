@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;   // För filoperationer
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Förberedande_Kurs
 {
@@ -14,7 +15,7 @@ namespace Förberedande_Kurs
 
 
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
 
             // TODO: Fånga felformaterade svar som inte kan bli tal.
         {
@@ -32,24 +33,7 @@ namespace Förberedande_Kurs
 
             while ( input != 0 )
             {
-                Console.Clear();
-                Console.WriteLine(" 0: Exit");
-                Console.WriteLine(" 1: Hello World");
-                Console.WriteLine(" 2: Namn och ålder");
-                Console.WriteLine(" 3: Byt färg");
-                Console.WriteLine(" 4: Dagens datum");
-                Console.WriteLine(" 5: Jämför tal");
-                Console.WriteLine(" 6: Gissa tal");
-                Console.WriteLine(" 7: Lagra text på disk");
-                Console.WriteLine(" 8: Visa lagrad textfil");
-                Console.WriteLine(" 9: Intressant fakta om valfritt decimaltal");
-                Console.WriteLine("10: Gångertabell");
-                Console.WriteLine("11: Sortera en array");
-                Console.WriteLine("12: Palindromtest");
-                Console.WriteLine("13: Lista mellanliggande tal");
-                Console.WriteLine("14: Lista sorterade tal efter udda/jämn");
-                Console.WriteLine("15: Summera tal");
-                Console.WriteLine("16: Gör två karaktärer");
+                Meny();
 
                 Func<bool>[] functions = { Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8, Ex9, Ex10, Ex11, Ex12, Ex13, Ex14, Ex15, Ex16, Ex17};   // void verkar inte funka i array med funktioner
 
@@ -58,13 +42,18 @@ namespace Förberedande_Kurs
                 if (!resp)
                     input = 17;
 
-                if (input > 0 && input < 17)
-                        functions[input-1]();
+                if (input > 17)
+                    input = 17;
 
-                Console.WriteLine("\nPress any key to continue");
-                Console.ReadKey();
+                if (input > 0)
+                {
+                    functions[input - 1]();
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
+                }
             }
             Console.WriteLine("Bye!");
+            await Task.Delay(1000);
         }
 
 
@@ -371,6 +360,28 @@ namespace Förberedande_Kurs
             Console.WriteLine("Unvalid input");
 
             return true;
+        }
+
+        private static void Meny()
+        {
+            Console.Clear();
+            Console.WriteLine(" 0: Exit");
+            Console.WriteLine(" 1: Hello World");
+            Console.WriteLine(" 2: Namn och ålder");
+            Console.WriteLine(" 3: Byt färg");
+            Console.WriteLine(" 4: Dagens datum");
+            Console.WriteLine(" 5: Jämför tal");
+            Console.WriteLine(" 6: Gissa tal");
+            Console.WriteLine(" 7: Lagra text på disk");
+            Console.WriteLine(" 8: Visa lagrad textfil");
+            Console.WriteLine(" 9: Intressant fakta om valfritt decimaltal");
+            Console.WriteLine("10: Gångertabell");
+            Console.WriteLine("11: Sortera en array");
+            Console.WriteLine("12: Palindromtest");
+            Console.WriteLine("13: Lista mellanliggande tal");
+            Console.WriteLine("14: Lista sorterade tal efter udda/jämn");
+            Console.WriteLine("15: Summera tal");
+            Console.WriteLine("16: Gör två karaktärer");
         }
 
     }
