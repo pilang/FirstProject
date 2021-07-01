@@ -16,7 +16,6 @@ namespace Förberedande_Kurs
 
         // metod för att klassen ska kunna skrivas ut på något informativt sätt.
         public override string ToString() {
-            //return name + " har hälsa " + health + ", styrka " + strength + " och tur " + luck + "." ;
             return $"{name} har hälsa {health}, styrka {strength} och tur {luck}.";
         }
 

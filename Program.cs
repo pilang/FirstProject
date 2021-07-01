@@ -7,19 +7,18 @@ using System.Threading.Tasks;
 
 namespace Förberedande_Kurs
 {
-    
     class Program
     {
         static Random slump = new Random();
         static string filepath = @"testfil.txt";   // Kanske blir mer plattformsoberoende om man skippar absolut sökväg
-
-
 
         static async Task Main(string[] args)
 
             // TODO: Fånga felformaterade svar som inte kan bli tal.
         {
             int input=1;
+
+            
   
             if (!File.Exists(filepath))  // Gör filen och fyll med något om den inte finns
             {
@@ -55,8 +54,6 @@ namespace Förberedande_Kurs
             Console.WriteLine("Bye!");
             await Task.Delay(1000);
         }
-
-
 
         private static bool Ex1()
         {
@@ -108,7 +105,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex6()
         {
             int gissningsant = 0;
@@ -133,10 +129,9 @@ namespace Förberedande_Kurs
                     Console.WriteLine("Du gissade rätt efter " + gissningsant + " gissningar.");
                 }
             }
-
+            
             return true;
         }
-
 
         private static bool Ex7()
         {
@@ -154,7 +149,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex8()
         {
             using (StreamReader sr = File.OpenText(filepath))
@@ -169,7 +163,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex9()
         {
             Console.WriteLine("Skriv in ett decimaltal. (Använd '.' som decimalavdelare");
@@ -180,7 +173,6 @@ namespace Förberedande_Kurs
 
             return true;
         }
-
 
         private static bool Ex10()
         {
@@ -215,7 +207,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex11()
         {
             Console.Write("Antal tal: ");
@@ -244,7 +235,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex12()
         {
             Console.Write("Uttryck att testa: ");
@@ -272,7 +262,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex13()
         {
             Console.Write("Tal 1: ");
@@ -285,7 +274,6 @@ namespace Förberedande_Kurs
 
             return true;
         }
-
 
         private static bool Ex14()
         {
@@ -326,7 +314,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex15()
         {
             Console.Write("Tal att summera: ");
@@ -341,7 +328,6 @@ namespace Förberedande_Kurs
             return true;
         }
 
-
         private static bool Ex16()
         {
             Console.Write("Namn1: ");
@@ -353,7 +339,6 @@ namespace Förberedande_Kurs
 
             return true;
         }
-
 
         private static bool Ex17()
         {
